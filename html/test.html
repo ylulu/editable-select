@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>editable-select</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/jquery.editable-select.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery.editable-select.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#userName").editableSelect({
+				bg_iframe: true,
+				onSelect: function(list_item) {      //获取选中值
+					$('#ddd2').val(this.text.val());
+				},
+				case_sensitive: false, // If set to true, the user has to type in an exact
+				items_then_scroll: 10 , // If there are more than 10 items, display a scrollbar
+				isFilter:true //是否过滤				
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<label for="name">用户名：</label>
+		<select name="userName" id="userName" class="Winstar-input120">
+			<option value="YL">YL</option>
+			<option value="lily">lily</option>
+			<option value="Lulu">Lulu</option>
+			<option value="Marry">Marry</option>
+			<option value="Karry">Karry</option>
+			<option value="Kim">Kim</option>
+			<option value="Smith">Smith</option>
+			<option value="Shary">Shary</option>
+			<option value="Tom">Tom</option>
+			<option value="Hory">Hory</option>
+		</select>
+		<label for="name" >选中的值</label> <input  type="text"  id="ddd2" />
+	</div>
+</body>
+</html>
